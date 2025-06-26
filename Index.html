@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ava Sinclair – AI Real Estate Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🏠 Ava Sinclair – AI Real Estate Assistant</h1>
+    <p>Tell Ava what kind of property you're looking for…</p>
+    <input type="text" id="query" placeholder="e.g. 2-bed under R1.7 M in Stellenbosch" />
+    <button onclick="askAva()">Search</button>
+    <div id="response"></div>
+  </header>
+
+  <!-- ✅ D-ID Floating Widget Embed -->
+  <script type="module"
+    src="https://agent.d-id.com/v2/index.js"
+    data-client-key="Z29vZ2xILW9hdXRoMnwxMTY2OTQwMTcyMDE4Nzkz"
+    data-agent-id="v2_agt_nwxPtlj4"
+    data-mode="fabio"
+    data-name="did-agent"
+    data-monitor="true"
+    data-orientation="horizontal"
+    data-position="right">
+  </script>
+
+  <script>
+    function askAva() {
+      const userInput = document.getElementById('query').value;
+      const responseDiv = document.getElementById('response');
+      responseDiv.innerHTML = "Ava is thinking... (demo)";
+      // Placeholder: Replace with OpenAI call or backend integration
+      setTimeout(() => {
+        responseDiv.innerHTML = `Here’s what I found for: <strong>${userInput}</strong><br> 🏘️ Stylish 2-bed apartment in Stellenbosch for R1.6M.`;
+      }, 1500);
+    }
+  </script>
+</body>
+</html>
